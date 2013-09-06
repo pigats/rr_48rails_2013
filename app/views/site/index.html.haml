@@ -15,7 +15,7 @@
     :plain
       <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_signup">
-      <form action="http://48rails.us7.list-manage1.com/subscribe/post?u=db3b7f8dab9a0992a4c727698&amp;id=d91154120e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <form action="http://48rails.us7.list-manage2.com/subscribe/post?u=db3b7f8dab9a0992a4c727698&amp;id=8decb97bd3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         
       <div class="mc-field-group inline-field">
         <label for="mce-EMAIL">Email Address </label>
@@ -49,18 +49,25 @@
   %p.teaser-text{:'data-order' => '10'} Win our prizes
   %p.teaser-text{:'data-order' => '11'} Earn the glory
   %p.teaser-text{:'data-order' => '12'} Are you ready?
+
   :javascript  
 
+
+    var autoplay = window.location.search.replace('?','').match(/(autoplay=)[\S][^&]+/)[0].split('=')[1]
+
+
     if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-      $('.landing-page-spotlight').hide();
-      $('.teaser').show();
-      new window.LazyLoad('https://www.youtube.com/iframe_api');
+      new window.LazyLoad('https://www.youtube.com/iframe_api');      
+      if(autoplay !== 'false') {
+        $('.landing-page-spotlight').hide();
+        $('.teaser').show();
+      }
     }
 
     var teaser_animation;
     function onYouTubeIframeAPIReady() { 
-      
-      teaser_animation = new window.TeaserAnimation($('.teaser'));
+      console.log(autoplay)
+      teaser_animation = new window.TeaserAnimation($('.teaser'), {'autoplay': autoplay});
       
       teaser_animation.on_animation_start( function() { 
         $('.landing-page-spotlight').hide(); $('.teaser').show(); 
@@ -82,5 +89,7 @@
   Reach us at
   %a{href: 'mailto:ninja@48rails.it'} ninja@48rails.it
   %span.teaser-animation-controls
+    %a.teaser-animation-control-play{href: 'javascript:void(0)', onclick: 'teaser_animation.play();', title: 'wanna play our awesome animation?'} &middot; play
+
     %a.teaser-animation-control-replay{href: 'javascript:void(0)', onclick: 'teaser_animation.replay();', title: 'wanna replay our awesome animation?'} &middot; replay
     %a.teaser-animation-control-skip{href: 'javascript:void(0)', onclick: 'teaser_animation.skip();', title: 'you must be crazy to skip this awesome animation'} &middot; skip

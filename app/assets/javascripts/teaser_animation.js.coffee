@@ -1,6 +1,10 @@
 class window.TeaserAnimation 
 
-  constructor:    (@teaser_el) -> 
+  constructor:    (@teaser_el, options) ->                     
+                    @autoplay = switch options['autoplay']
+                      when 'false' then false
+                      else true
+
                     @i = 0 # checkpoint index
 
                     # create an invisible player
@@ -10,13 +14,13 @@ class window.TeaserAnimation
                       width: '0',
                       videoId: 'HwQMAsOk2dk',
                       events:
-                        'onReady': (event) => this.play(event.target); 
+                        'onReady': this.player_ready; 
                         'onStateChange': this.player_state_change
                     )                   
 
   # play music and start sync timer 
-  play:           (target = @player) ->  
-                    target.playVideo() 
+  play:           (target = @player) ->
+                    target.playVideo()
                     c = this.checkpoints()
                     @animation_timer = window.setInterval( => 
                       t = parseInt(@player.   getCurrentTime() * 10) # music current time in s/10
@@ -55,6 +59,12 @@ class window.TeaserAnimation
   on_animation_end:     (f) -> @animation_end_callback = f
 
 
+  player_ready:         (event) => 
+                          if(@autoplay)
+                            this.play(event.target)
+                          else
+                            $('.teaser-animation-control-play').show()
+
   # events handler
   player_state_change:  (event) => 
                           switch event.data
@@ -64,7 +74,8 @@ class window.TeaserAnimation
                               @animation_end_callback() unless @animation_end_callback is undefined
                             when 1 # beginning of the music
                               $('.teaser-animation-control-skip').show() # let user skip
-                              $('.teaser-animation-control-replay').hide()                              
+                              $('.teaser-animation-control-replay').hide() 
+                              $('.teaser-animation-control-play').hide() # it is visible if autoplay was false
                               if this.current_time() in [0, @player.getDuration()] # trigger the callback only if playing from the beginning
                                  @animation_start_callback() unless @animation_start_callback is undefined
 

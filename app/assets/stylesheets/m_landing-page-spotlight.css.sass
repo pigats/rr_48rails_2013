@@ -1,0 +1,40 @@
+@import compass
+@import susy
+@import animation
+
+.landing-page-spotlight
+  +span-columns(12 omega)
+  height: 10 * $column-width // ~ a square box
+  position: relative // create a positioning context
+  overflow: hidden
+
+  &:after // spotlight
+    content: ''
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 1
+    +background-image(radial-gradient(50% 50%, circle, rgba(#000, 0) -20px, rgba(#000, 1) 70%)) 
+    pointer-events: none // click through
+
+.landing-page-spotlight-ninja
+  +span-columns(5, 12)
+  margin-left: - columns(1, 12)
+  margin-top: 54px
+
+
+.landing-page-spotlight-column
+  +span-columns(4 omega, 12)
+  +post(3, 12)
+
+  p 
+    font-size: 1em
+    line-height: 1.5em
+
+
+.landing-page-spotlight-logo
+  margin-left: - columns(2,4)
+  margin-bottom: 54px

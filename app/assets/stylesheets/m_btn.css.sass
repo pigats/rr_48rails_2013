@@ -1,0 +1,39 @@
+@import compass/css3/images
+@import compass/css3/border-radius
+@import compass/css3/box-shadow
+@import compass/css3/text-shadow
+@import compass/css3/shared
+
+$dark_blue: #036
+$light_blue: lighten($dark_blue, 20%)
+
+
+a.btn
+  text-decoration: none
+
+.btn
+  display: inline-block
+  +experimental(appearance, none)
+  padding: 8px 10px
+  margin: 0 0 11px
+  border: 1px solid $light_blue
+  +border-radius(2px)
+  
+  background: lighten($light_blue, 2%)
+  color: white
+  +text-shadow(0 -1px black)
+  
+  cursor: pointer
+
+  &:hover
+    background: $light_blue
+    border: 1px solid $dark_blue
+
+  &:active
+    +box-shadow(0 1px 1px 1px darken($light_blue, 10%) inset)
+
+
+  &.btn-small
+    padding: 1px 10px
+
+  

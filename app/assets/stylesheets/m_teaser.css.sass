@@ -1,0 +1,79 @@
+@import compass
+@import susy
+@import animation
+@import m_teaser-animations
+
+.teaser
+  position: relative // create a positioning context
+  +span-columns(12)
+  height: 10 * $column-width // ~ a square box
+  overflow: hidden
+  display: none
+
+  &:after // spotlight
+    content: ''
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 1
+    +background-image(radial-gradient(50% 50%, circle, rgba(#000, 0.3) -20px, rgba(#000, 1) 50%)) 
+    pointer-events: none // click through
+
+.teaser-animation-controls a 
+  display: none
+
+.teaser-image.animate, .teaser-text.animate
+  display: block
+
+.teaser-image
+  display: none
+  opacity: 0
+  position: absolute
+
+  &[data-order='1'].animate 
+    top: 200px
+    left: 50%
+    margin-left: -100px
+    +animation(ninja-knelt-with-sword 3s 1)
+
+  &[data-order='2'].animate
+    top: 250px
+    +transform-origin(170px 260px)
+    +animation(ninja-kicking 3s 1)
+
+  &[data-order='3'].animate
+    +animation(ninja-jumping-left 3s 1)
+
+  &[data-order='4'].animate 
+    +animation(ninja-standing-with-sword 3s 1)
+
+  &[data-order='5']
+    opacity: .8
+    z-index: 2
+    left: 50%   
+    top: 0
+    margin-left: -240px
+    margin-top: 0
+
+    &.animate
+      +animation(logo 5.5s 1)
+
+.teaser-text
+  opacity: 0  
+  display: none
+  position: absolute
+  width: 100%
+  top: 40%
+  left: 0
+  z-index: 2
+
+  font-size: 4em
+  text-align: center
+
+  &.animate
+    +animation(text_effect 4s 1)
+  
+

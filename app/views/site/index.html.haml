@@ -1,0 +1,86 @@
+.landing-page-spotlight
+  = image_tag 'ninja-standing-with-sword.png', class: 'landing-page-spotlight-ninja'
+  
+  .landing-page-spotlight-column
+
+    = image_tag '48rails-logo-2.png', class: 'landing-page-spotlight-logo'
+
+    %p 
+      Next 22&ndash;24 October the top Italian Rails devs will gather in Padua to fight the 
+      %a{href: 'http://railsrumble.com'} RailsRumble 
+      in a 48 hours long non-stop hackathon.
+
+    = image_tag 'ninja+railsrumble.png', style: 'opacity: .5;'
+
+    :plain
+      <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+      <form action="http://48rails.us7.list-manage1.com/subscribe/post?u=db3b7f8dab9a0992a4c727698&amp;id=d91154120e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        
+      <div class="mc-field-group inline-field">
+        <label for="mce-EMAIL">Email Address </label>
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="leave your email">
+      </div>
+      <div class="clear inline-submit"><input type="submit" value="Join us" name="subscribe" id="mc-embedded-subscribe" class="button btn"></div>
+        <div id="mce-responses" class="clear">
+          <div class="response" id="mce-error-response" style="display:none"></div>
+          <div class="response" id="mce-success-response" style="display:none"></div>
+        </div>
+      </form>
+      </div>
+
+      <!--End mc_embed_signup-->
+
+.teaser
+  = image_tag 'ninja-knelt-with-sword.png', class: 'teaser-image', :'data-order' => '1'
+  %p.teaser-text{:'data-order' => '1'} Rails ninjas
+  = image_tag 'ninja-kicking.png', class: 'teaser-image', :'data-order' => '2'
+  %p.teaser-text{:'data-order' => '2'} are back
+  = image_tag 'ninja-jumping-left.png', class: 'teaser-image', :'data-order' => '3'
+  %p.teaser-text{:'data-order' => '3'} October 22&ndash;24 
+  = image_tag 'ninja-standing-with-sword.png', class: 'teaser-image', :'data-order' => '4'
+  %p.teaser-text{:'data-order' => '4'} Padua, Italy 
+  %p.teaser-text{:'data-order' => '5'} Hacking non-stop
+  %p.teaser-text{:'data-order' => '6'} for 48 hours
+  %p.teaser-text{:'data-order' => '7'} The top Italian Rails devs
+  %p.teaser-text{:'data-order' => '8'} The top Italian Rails firms
+  = image_tag '48rails-logo-2.png', class: 'teaser-image', :'data-order' => '5'
+  %p.teaser-text{:'data-order' => '9'} Show your craft
+  %p.teaser-text{:'data-order' => '10'} Win our prizes
+  %p.teaser-text{:'data-order' => '11'} Earn the glory
+  %p.teaser-text{:'data-order' => '12'} Are you ready?
+  :javascript  
+
+    if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+      $('.landing-page-spotlight').hide();
+      $('.teaser').show();
+      new window.LazyLoad('https://www.youtube.com/iframe_api');
+    }
+
+    var teaser_animation;
+    function onYouTubeIframeAPIReady() { 
+      
+      teaser_animation = new window.TeaserAnimation($('.teaser'));
+      
+      teaser_animation.on_animation_start( function() { 
+        $('.landing-page-spotlight').hide(); $('.teaser').show(); 
+      });
+      
+      teaser_animation.on_animation_end( function() { 
+        $('.teaser').fadeOut(500, function() { $('.landing-page-spotlight').fadeIn(500); });
+      });
+    }
+
+
+%footer
+  48rails by
+  %a{href: 'http://www.programmersinpadua.it'} Programmers in Padua
+  &middot;
+  Follow
+  %a{href: 'http://twitter.com/48rails'} @48rails
+  &middot;
+  Reach us at
+  %a{href: 'mailto:ninja@48rails.it'} ninja@48rails.it
+  %span.teaser-animation-controls
+    %a.teaser-animation-control-replay{href: 'javascript:void(0)', onclick: 'teaser_animation.replay();', title: 'wanna replay our awesome animation?'} &middot; replay
+    %a.teaser-animation-control-skip{href: 'javascript:void(0)', onclick: 'teaser_animation.skip();', title: 'you must be crazy to skip this awesome animation'} &middot; skip

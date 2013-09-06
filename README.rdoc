@@ -1,0 +1,3 @@
+== README
+
+rails ninjas silently and invisibly kicking your ass

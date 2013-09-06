@@ -1,0 +1,161 @@
+@import compass
+@import animation
+
+// --------------------------------------------------------------------------------------------------
+// ninja knelt with sword (1st)
+// --------------------------------------------------------------------------------------------------
++keyframes(ninja-knelt-with-sword)
+  0%
+    opacity: 0
+
+  20%, 60%
+    opacity: .8
+
+  100%
+    opacity: 0
+
+// --------------------------------------------------------------------------------------------------
+// ninja on the right, kicking (2nd)
+// --------------------------------------------------------------------------------------------------
++keyframes(ninja-kicking)
+  0%
+    opacity: 0
+    right: 0
+
+  12%
+    +rotate(0deg)
+  13%
+    +rotate(5deg)
+  14%
+    +rotate(-5deg)
+  15%
+    +rotate(5deg)
+  16%
+    +rotate(-5deg)
+  17%
+    +rotate(5deg)
+  18%
+    +rotate(-5deg)
+  19%
+    +rotate(5deg)
+  20% 
+    opacity: .8
+    right: 150px
+    +rotate(-5deg)
+  21%
+    +rotate(5deg)
+  22%
+    +rotate(-5deg)
+  23%
+    +rotate(5deg)
+  24%
+    +rotate(-5deg)
+  25%
+    +rotate(5deg)
+  26%
+    +rotate(-5deg)
+  27%
+    +rotate(5deg)
+  28%
+    +rotate(-5deg)
+  29%
+    +rotate(5deg)
+  30%
+    +rotate(-5deg)
+  31%
+    +rotate(0)
+
+  40%
+    opacity: .8
+    right: 150px
+
+  100%
+    opacity: 0
+    right: 0
+
+// --------------------------------------------------------------------------------------------------
+// ninja jumping right to left (3rd)
+// --------------------------------------------------------------------------------------------------
++keyframes(ninja-jumping-left)
+  0%
+    opacity: 0
+    left: 100%
+    width: 150px
+    top: 250px
+
+  20%, 40%
+    opacity: .8
+
+  100%
+    opacity: 0
+    left: -500px
+    width: 250px
+    top: 300px
+
+// --------------------------------------------------------------------------------------------------
+// ninja with sword, on the left (4th)
+// --------------------------------------------------------------------------------------------------
++keyframes(ninja-standing-with-sword)
+  0%
+    opacity: 0
+    left: -300px
+
+  20%, 60%
+    opacity: 1
+    left: -70px
+
+  100%
+    opacity: 0
+    left: -300px
+
+// --------------------------------------------------------------------------------------------------
+// logo heartbeat
+// --------------------------------------------------------------------------------------------------
++keyframes(logo)
+  0%
+    width: 480px
+    margin-left: -240px
+    top: 50%
+    margin-top: -105px
+
+  32%
+    width: 480px
+    margin-left: -240px
+
+  33%
+    width: 500px
+    margin-left: -250px
+
+  34%, 65%
+    width: 480px
+    margin-left: -240px
+
+  66%
+    width: 500px
+    margin-left: -250px
+
+  67%
+    width: 480px
+    margin-left: -240px
+
+  100%
+    width: 480px
+    margin-left: -240px
+    top: 0
+    margin-top: 0
+
+// --------------------------------------------------------------------------------------------------
+// text opacity and pan
+// --------------------------------------------------------------------------------------------------
++keyframes(text_effect)
+  0%
+    left: 0px
+    opacity: 0
+
+  30%
+    opacity: 1
+    left: 20px
+
+  100%
+    left: 50px
+    opacity: 0

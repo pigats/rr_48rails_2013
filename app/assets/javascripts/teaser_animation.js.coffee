@@ -1,9 +1,7 @@
 class window.TeaserAnimation 
 
   constructor:    (@teaser_el, options) ->                     
-                    @autoplay = switch options['autoplay']
-                      when 'false' then false
-                      else true
+                    @autoplay = options['autoplay']
 
                     @i = 0 # checkpoint index
 

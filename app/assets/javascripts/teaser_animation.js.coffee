@@ -34,13 +34,14 @@ class window.TeaserAnimation
                     window.clearInterval(@animation_timer)
                     $(@teaser_el).children().removeClass('animate')
 
-
+  # pause, reset checkpoint index, remove animate class (useful for animation lasting forever) and play again
   replay:         ->
                     this.pause()
                     @i = 0
                     $('.animate').removeClass('.animate')
                     this.play()
 
+  # pause and skip to the end of the music to trigger callbacks
   skip:           ->
                     this.pause()
                     @player.seekTo(@player.getDuration())
@@ -49,19 +50,22 @@ class window.TeaserAnimation
 
   current_time:   -> @player.getCurrentTime()
   
+  # register custom callbacks for the beginning and the end of the music
   on_animation_start:   (f) -> @animation_start_callback = f
   on_animation_end:     (f) -> @animation_end_callback = f
 
+
+  # events handler
   player_state_change:  (event) => 
                           switch event.data
-                            when 0 
+                            when 0 # end of the music
                               $('.teaser-animation-control-skip').hide()
-                              $('.teaser-animation-control-replay').show()
+                              $('.teaser-animation-control-replay').show() # let user replay
                               @animation_end_callback() unless @animation_end_callback is undefined
-                            when 1
-                              $('.teaser-animation-control-skip').show()
+                            when 1 # beginning of the music
+                              $('.teaser-animation-control-skip').show() # let user skip
                               $('.teaser-animation-control-replay').hide()                              
-                              if this.current_time() in [0, @player.getDuration()]
+                              if this.current_time() in [0, @player.getDuration()] # trigger the callback only if playing from the beginning
                                  @animation_start_callback() unless @animation_start_callback is undefined
 
   # checkpoints

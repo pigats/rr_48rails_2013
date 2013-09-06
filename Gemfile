@@ -10,10 +10,9 @@ group :development do
 end
 
 group :production do
-
   gem 'pg'
   gem 'thin'
-
+  gem 'rails_serve_static_assets' 
 end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

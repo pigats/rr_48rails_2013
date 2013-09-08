@@ -60,7 +60,9 @@
       if (query_autoplay !== null && query_autoplay[0].split('=')[1] === 'false') autoplay = false
     }
 
-    if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+    // ok, the animation is not intended to run on mobile *yet* (autoplay limitation on iOS, the player is not invisible on Android)
+    var ua = navigator.userAgent;
+    if (!ua.match(/(iPod|iPhone|iPad)/) && !ua.match(/Android/)) {
       new window.LazyLoad('https://www.youtube.com/iframe_api');      
       if(autoplay === true) {
         $('.landing-page-spotlight').hide();

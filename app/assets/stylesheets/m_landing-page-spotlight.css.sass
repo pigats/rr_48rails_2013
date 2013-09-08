@@ -1,40 +1,69 @@
 @import compass
 @import susy
 @import animation
+@import breakpoints
 
 .landing-page-spotlight
-  +span-columns(12 omega)
-  height: 10 * $column-width // ~ a square box
   position: relative // create a positioning context
-  overflow: hidden
 
-  &:after // spotlight
-    content: ''
-    display: block
-    position: absolute
-    width: 100%
-    height: 100%
-    top: 0
-    left: 0
-    z-index: 1
-    +background-image(radial-gradient(50% 50%, circle, rgba(#000, 0) -20px, rgba(#000, 1) 75%)) 
-    pointer-events: none // click through
++at-breakpoint($mobile)
+  .landing-page-spotlight
+    +span-columns(6 omega)
+    margin-bottom: 54px
 
-.landing-page-spotlight-ninja
-  +span-columns(5, 12)
-  margin-left: - columns(1, 12)
-  margin-top: 54px
+  .landing-page-spotlight-ninja
+    display: none
+
+  .landing-page-spotlight-logo
+    +span-columns(6)
+    margin-bottom: 54px
 
 
-.landing-page-spotlight-column
-  +span-columns(4 omega, 12)
-  +post(3, 12)
 
-  p 
-    font-size: 1em
-    line-height: 1.5em
++at-breakpoint($tablet)
+ 
+  .landing-page-spotlight
+    overflow: hidden
+
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      z-index: 1
+      +background-image(linear-gradient(left, #000 0, rgba(#000, 0) 400px)) 
+      pointer-events: none // click through
+
+  .landing-page-spotlight-ninja
+    +span-columns(5, 12)
+    margin-left: - columns(1, 12)
+    margin-top: 54px
 
 
-.landing-page-spotlight-logo
-  margin-left: - columns(2,4)
-  margin-bottom: 54px
+  .landing-page-spotlight-column
+    +span-columns(7 omega, 12)
+
+
+  .landing-page-spotlight-logo
+    margin-left: - columns(1,7)
+
+
++at-breakpoint($desktop)
+
+  .landing-page-spotlight
+    height: 10 * $column-width // ~ a square box
+    margin-bottom: 0
+
+    &:after
+      +background-image(radial-gradient(50% 50%, circle, rgba(#000, 0) -20px, rgba(#000, 1) 75%)) 
+
+  .landing-page-spotlight-column
+    +span-columns(4 omega, 12)
+    +post(3, 12)      
+
+
+  .landing-page-spotlight-logo
+    margin-left: - columns(2,4)

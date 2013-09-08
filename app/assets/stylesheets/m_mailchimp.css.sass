@@ -1,4 +1,6 @@
 @import compass
+@import susy
+@import breakpoints
 
 #mc_embed_signup
   margin-top: 36px
@@ -7,20 +9,35 @@
   display: inline-block
 
   label
-    display: none   
+    display: none  
 
   input
-    width: 18em
+    width: 100%
     padding: 8px 10px
-    margin-bottom: 0
-
+    +box-sizing(border-box)
 
 .inline-submit
   display: inline-block
 
++at-breakpoint($mobile)
 
-input[type=text], input[type=email], input[type=url], input[type=password] 
-  padding: 8px 10px
-  margin: 0 0 18px
-  border: 1px solid grey
-  +border-radius(2px)
+  input
+    font-size: 1em
+
+  .inline-field 
+    +span-columns(6 omega, 6)
+
+  .inline-submit
+    +span-columns(4, 6)
+    +squish(1, 1, 6)
+
+    input
+      width: 100%
+
++at-breakpoint($tablet) // tablet and desktop
+
+  .inline-field 
+    +span-columns(5, 7)
+
+  .inline-submit
+    +span-columns(2 omega, 7)

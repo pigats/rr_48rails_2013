@@ -6,7 +6,7 @@
     = image_tag '48rails-logo-2.png', class: 'landing-page-spotlight-logo'
 
     %p 
-      Next 22&ndash;24 October the top Italian Rails devs will gather in Padua to fight the 
+      Next 19&ndash;20 October the top Italian Rails devs will gather in Padua to fight the 
       %a{href: 'http://railsrumble.com'} RailsRumble 
       in a 48 hours long non-stop hackathon.
 
@@ -37,7 +37,7 @@
   = image_tag 'ninja-kicking.png', class: 'teaser-image', :'data-order' => '2'
   %p.teaser-text{:'data-order' => '2'} are back
   = image_tag 'ninja-jumping-left.png', class: 'teaser-image', :'data-order' => '3'
-  %p.teaser-text{:'data-order' => '3'} October 22&ndash;24 
+  %p.teaser-text{:'data-order' => '3'} October 19&ndash;20 
   = image_tag 'ninja-standing-with-sword.png', class: 'teaser-image', :'data-order' => '4'
   %p.teaser-text{:'data-order' => '4'} Padua, Italy 
   %p.teaser-text{:'data-order' => '5'} Hacking non-stop
@@ -60,9 +60,7 @@
       if (query_autoplay !== null && query_autoplay[0].split('=')[1] === 'false') autoplay = false
     }
 
-    // ok, the animation is not intended to run on mobile *yet* (autoplay limitation on iOS, the player is not invisible on Android)
-    var ua = navigator.userAgent;
-    if (!ua.match(/(iPod|iPhone|iPad)/) && !ua.match(/Android/)) {
+    if(window.matchMedia("(min-width: 769px").matches) {
       new window.LazyLoad('https://www.youtube.com/iframe_api');      
       if(autoplay === true) {
         $('.landing-page-spotlight').hide();

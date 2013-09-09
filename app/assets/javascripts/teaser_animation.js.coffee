@@ -71,7 +71,6 @@ class window.TeaserAnimation
                               $('.teaser-animation-control-replay').show() # let user replay
                               @animation_end_callback() unless @animation_end_callback is undefined
                             when 1 # beginning of the music
-                              console.log('play!')
                               $('.teaser-animation-control-skip').show() # let user skip
                               $('.teaser-animation-control-replay').hide() 
                               $('.teaser-animation-control-play').hide() # it is visible if autoplay was false

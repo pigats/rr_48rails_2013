@@ -54,14 +54,15 @@
 
     var autoplay = true;
     var query = window.location.search.replace('?','');
-    var query_autoplay;
     if (query.length !== 0) {
-      query_autoplay = query.match(/(autoplay=)[\S][^&]+/)
+      var query_autoplay = query.match(/(autoplay=)[\S][^&]+/)
       if (query_autoplay !== null && query_autoplay[0].split('=')[1] === 'false') autoplay = false
     }
 
-    if(window.matchMedia("(min-width: 769px").matches) {
+    if(window.matchMedia("(min-width: 769px)").matches) {
       new window.LazyLoad('https://www.youtube.com/iframe_api');      
+        console.log('ciao')
+
       if(autoplay === true) {
         $('.landing-page-spotlight').hide();
         $('.teaser').show();

@@ -16,47 +16,6 @@ class window.TeaserAnimation
                         'onStateChange': this.player_state_change
                     )                   
 
-  # play music and start sync timer 
-  play:           (target = @player) ->
-                    target.playVideo()
-                    c = this.checkpoints()
-                    @animation_timer = window.setInterval( => 
-                      t = parseInt(@player.   getCurrentTime() * 10) # music current time in s/10
-                      if(t > c[@i]['t'] - 2 and t < c[@i]['t'] + 2) # add some tolerance to sync (+- 0.2s)
-                        this.animate(c[@i]['target'], c[@i]['duration'])
-                        @i++
-                      if(@i == c.length) # no more animations, we can stop the sync timer
-                        window.clearInterval(@animation_timer)   
-                        @i = 0;                 
-                    , 50) 
-  
-  # pause music and stop sync timer
-  pause:          -> 
-                    @player.pauseVideo() 
-                    window.clearInterval(@animation_timer)
-                    $(@teaser_el).children().removeClass('animate')
-
-  # pause, reset checkpoint index, remove animate class (useful for animation lasting forever) and play again
-  replay:         ->
-                    this.pause()
-                    @i = 0
-                    $('.animate').removeClass('.animate')
-                    this.play()
-
-  # pause and skip to the end of the music to trigger callbacks
-  skip:           ->
-                    this.pause()
-                    @player.seekTo(@player.getDuration())
-                    
-
-
-  current_time:   -> @player.getCurrentTime()
-  
-  # register custom callbacks for the beginning and the end of the music
-  on_animation_start:   (f) -> @animation_start_callback = f
-  on_animation_end:     (f) -> @animation_end_callback = f
-
-
   player_ready:         (event) => 
                           if(@autoplay)
                             this.play(event.target)
@@ -74,8 +33,58 @@ class window.TeaserAnimation
                               $('.teaser-animation-control-skip').show() # let user skip
                               $('.teaser-animation-control-replay').hide() 
                               $('.teaser-animation-control-play').hide() # it is visible if autoplay was false
-                              if this.current_time() in [0, @player.getDuration()] # trigger the callback only if playing from the beginning
-                                 @animation_start_callback() unless @animation_start_callback is undefined
+                              @animation_start_callback() unless @animation_start_callback is undefined
+
+
+  # register custom callbacks for the beginning and the end of the music
+  on_animation_start:   (f) -> @animation_start_callback = f
+  on_animation_end:     (f) -> @animation_end_callback = f
+
+  # play music and start sync timer 
+  play:           (target = @player) ->
+                    target.playVideo()
+                    c = this.checkpoints()
+                    @animation_timer = window.setInterval( => 
+                      t = this.current_time()
+                      if(t >= c[@i]['t'] - 1 and t <= c[@i]['t'] + 1) # add some tolerance to sync (+- 0.1s)
+                        this.animate(c[@i]['target'], c[@i]['duration'])
+                        @i++
+                      if(@i == c.length) # no more animations, we can stop the sync timer
+                        window.clearInterval(@animation_timer)   
+                        @i = 0;                 
+                    , 50) 
+  
+  # pause music, stop sync timer, reset checkpoint index and remove animate class (useful for animations lasting forever), 
+  stop:          -> 
+                    @player.pauseVideo() 
+                    window.clearInterval(@animation_timer)
+                    @i = 0
+                    $(@teaser_el).children().removeClass('animate')
+
+  # stop and play again
+  replay:         ->
+                    this.stop()
+                    this.play()
+
+  # stop and skip to the end of the music to trigger callbacks
+  skip:           ->
+                    this.stop()
+                    @player.seekTo(@player.getDuration())
+                    
+  # music current time in s/10
+  current_time:   -> parseInt(@player.getCurrentTime() * 10) 
+
+
+
+  # attach animation to target
+  animate:        (target_selector, duration) => 
+                    el = $(target_selector)
+                    el.addClass('animate')
+                    
+                    window.setTimeout( => 
+                      el.removeClass('animate')
+                    , duration) unless duration is 'forever'  
+
 
   # checkpoints
   checkpoints:    ->
@@ -104,12 +113,3 @@ class window.TeaserAnimation
                       {t: 615, target: '.teaser-text[data-order=12]',   duration: 4100}                  
                     ]
 
-
-  # attach animation to target
-  animate:        (target_selector, duration) => 
-                    el = $(target_selector)
-                    el.addClass('animate')
-                    
-                    window.setTimeout( => 
-                      el.removeClass('animate')
-                    , duration) unless duration is 'forever'  

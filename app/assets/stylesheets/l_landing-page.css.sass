@@ -1,31 +1,10 @@
 @import compass
 @import susy
-@import breakpoints
 
 
-body
+.l_landing-page
   background: black
   color: whiteSmoke
-  margin-top: 36px
-  font-family: 'Lato', sans-serif 
-  font-size: 20px
-  font-weight: 400
-  line-height: 1.5em
 
-a, a:hover, a:active, a:visited
-  color: whiteSmoke
-
-
-+at-breakpoint($mobile)
-  body
-    +container
-
-+at-breakpoint($tablet)
-  body
-    +container
-
-+at-breakpoint($desktop) 
-  body
-    +container
-    font-size: 16px
-    font-weight: 100
+  a, a:hover, a:active, a:visited
+    color: whiteSmoke

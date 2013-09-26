@@ -49,7 +49,7 @@ class Twitter::Tweet
     end
 
     def self.urls_to_html(string, entity)
-      "<a href='#{entity.url}' target='_blank'>#{string}</a>"
+      "<a href='#{entity.url}' target='_blank'>#{entity.display_url}</a>"
     end
 
     def self.media_to_html(string, entity)

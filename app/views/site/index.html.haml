@@ -55,9 +55,21 @@
   .row.hackathon-social
     %section.row-content
       %article.row-content-single
+        -#= debug @tweets
+        - @tweets.each do |tweet|
+          %p.hackathon-tweet
+            %time.hackathon-tweet-date
+              = time_ago_in_words tweet.created_at
+              ago
+            %br/
+            = raw tweet.to_html
+            %br/
+            %a.hackathon-tweet-link{href: "#{tweet.status_url}", target: '_blank'} &#x21bb; retweet 
+            %a.hackathon-tweet-link{href: "#{tweet.status_url}", target: '_blank'} &star; favourite
+
       %article.row-content-single
-        - @fb_group.each do |fb_member|
-          %img{src: fb_member[:src], alt: fb_member[:name], class: 'hackathon-face'}
+        - @faces.each do |face|
+          %img{src: face[:src], alt: face[:name], class: 'hackathon-face'}
       %article.row-content-single
         %h2.row-title Ninjas are social, too
         %p We set up a facebook group where you can meet the other Rails ninjas, and maybe find your next teammate:
@@ -120,5 +132,10 @@
         %p 48rails is built with the help of many technical, logistic and media partners. 
 
         %p The hackathon is brought to you by some lovely folks from programmers in padua.
-      %article.row-content-double
-        = image_tag 'logos/digital-meet.jpg'
+      %article.row-content-double.row-content-bottom
+        %div
+          %a{href: 'http://www.digitalmeet.it/', target: '_blank'}
+            = image_tag 'logos/digital-meet.jpg'
+          %br/ 
+          %a{href: 'http://www.programmersinpadua.it/', target: '_blank'}
+            = image_tag 'logos/programmersinpadua.jpg'

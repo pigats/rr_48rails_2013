@@ -45,6 +45,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'compass-rails'
 gem 'animation'
 gem 'susy'
+gem 'koala'
 
 
 # Use ActiveModel has_secure_password

@@ -1,4 +1,5 @@
 @import compass
+@import susy
 
 .hackathon-title
   background-color: white
@@ -73,3 +74,14 @@
 .hackathon-be-sponsor-prospectus
   padding: 15px 0 5px 30px
   background: transparent image-url('pdf-icon.png') no-repeat left bottom
+
+
+.hackathon-face
+  width: 22%
+  +border-radius(50%)
+  margin: 0 2% 4px 0
+  border: 4px solid #f49e20
+  +box-sizing(border-box)
+
+  &:nth-of-type(4n)
+    margin-right: 0

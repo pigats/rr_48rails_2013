@@ -56,6 +56,8 @@
     %section.row-content
       %article.row-content-single
       %article.row-content-single
+        - @fb_group.each do |fb_member|
+          %img{src: fb_member[:src], alt: fb_member[:name], class: 'hackathon-face'}
       %article.row-content-single
         %h2.row-title Ninjas are social, too
         %p We set up a facebook group where you can meet the other Rails ninjas, and maybe find your next teammate:

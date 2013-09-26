@@ -43,11 +43,17 @@ $padding-top-and-bottom: 36px
   &:last-child
     +omega
 
+  &.row-content-bottom div 
+    max-width: columns(4, 12) - gutter(12)
+
 .row-content-double
   +span-columns(8, 12)
 
   &:last-child
     +omega
+
+  &.row-content-bottom div 
+    max-width: columns(8, 12) - gutter(12)
 
 .row-content-triple
   +span-columns(12 omega, 12)
@@ -55,10 +61,13 @@ $padding-top-and-bottom: 36px
   &:last-child
     +omega
 
+  &.row-content-bottom div 
+    max-width: columns(12, 12)
+
 .row-content-bottom div
   position: absolute
   bottom: $padding-top-and-bottom
-  max-width: columns(4, 12) - gutter(12)
+  //max-width: columns(4, 12) - gutter(12)
   
 .row-title, .row-important
   margin: 0

@@ -49,9 +49,6 @@ class Twitter::Tweet
     end
 
     def self.urls_to_html(string, entity)
-      puts string
-      puts entity.inspect
-      puts '-------------'
       "<a href='#{entity.url}' target='_blank'>#{string}</a>"
     end
 

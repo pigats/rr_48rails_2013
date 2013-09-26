@@ -10,7 +10,6 @@ html
   height: 100%
 
 body 
-  +container
   height: 100%
   margin-top: 36px
   font-family: 'Lato', sans-serif 
@@ -37,9 +36,44 @@ footer
   & a:hover
     color: whiteSmoke
 
+a, a:hover, a:active, a:visited
+  color: whiteSmoke
+  text-decoration: none
+  border-bottom: 1px solid whiteSmoke
 
 input[type=text], input[type=email], input[type=url], input[type=password] 
   padding: 8px 10px
   margin: 0 0 18px
   border: 1px solid grey
   +border-radius(2px)
+
+
+h1
+  font-size: 198px
+  font-weight: 700
+  text-align: center
+
+h2, h3, h4
+  font-weight: 400
+
+h2
+  font-size: 63px
+
+h3
+  font-size: 54px
+
+h4
+  font-size: 27px
+  line-height: 1.3 !important
+
+ul
+  padding-left: 0
+  margin-bottom: 0
+  list-style-position: inside
+
+img 
+  position: relative
+  max-width: 100%
+
+p:last-child
+  margin-bottom: 0

@@ -1,0 +1,64 @@
+@import compass
+@import susy
+
+$border-bottom-width: 30px
+$row-min-height: 250px
+$padding-top-and-bottom: 36px
+
+.row // this is the background, spanning 100% width
+  min-height: $row-min-height
+  //border-bottom: $border-bottom-width solid  
+
+  .row-content:after
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    height: 100%
+    width: columns(4, 12)
+    margin-left: columns(4, 12)
+    z-index: -1
+
+// content
+
+.row-content
+  +container
+  position: relative
+  min-height: $row-min-height
+  vertical-align: bottom
+  font-weight: 100
+  z-index: 1
+  +clearfix
+
+  article
+    padding: $padding-top-and-bottom 0
+
+.row-content-single
+  +span-columns(4, 12)
+  
+  &:last-child
+    +omega
+
+.row-content-double
+  +span-columns(8, 12)
+
+  &:last-child
+    +omega
+
+.row-content-triple
+  +span-columns(12 omega, 12)
+
+  &:last-child
+    +omega
+
+.row-content-bottom div
+  position: absolute
+  bottom: $padding-top-and-bottom
+  max-width: columns(4, 12) - gutter(12)
+  
+.row-title, .row-important
+  margin: 0
+  line-height: 1
+  +text-shadow(1px -1px 0 #aaa)
+
+

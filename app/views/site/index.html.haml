@@ -38,15 +38,27 @@
 
   .row.hackathon-tickets
     %section.row-content
+
       %article.row-content-double
-        %p Buying tickets for your whole team? Want an invoice? Just ask!
+        :plain
+          <div style="width:100%; text-align:left;">
+
+          <iframe  src="https://www.eventbrite.it/tickets-external?eid=4634644346&ref=etckt&v=2" frameborder="0" height="292" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
+
+          <div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.it/r/etckt">Registrazione dell'evento online</a><span style="color:#ddd;"> per </span><a style="color:#ddd; text-decoration:none;" target="_blank" href="https://48rails.eventbrite.it?ref=etckt">48rails</a> <span style="color:#ddd;">con tecnologia</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.it?ref=etckt">Eventbrite</a></div></div>
       
+        .row-content-bottom
+          %div 
+            Buying tickets for your whole team? Need invoice? Have special needs? Ask 
+            %a{href: 'mailto:ninja@48rails.it'} ninja@48rails.it  
+
+
       %article.row-content-single
         %h2.row-title Buy our ticket &amp; register to RRumble
 
         %p 
           In addition to buying one of our tickets, it is of the utmost importance to register your team to the RailsRumble between
-        %h4.row-important 7 &ndash; 13 Oct  
+        %h4.row-important 7 &ndash; 13 October 
         %p 
           through their awesome website,
           %a{href: 'http://railsrumble.com', target: '_blank'} http://railsrumble.com 
@@ -82,23 +94,22 @@
           on twitter, and tweet with the hashtag
         %h2.row-important #48rails
 
-  .row.hackathon-sponsors
-    %section.row-content
-      %article.row-content-triple
-        %h2.row-content-single.row-title.hackathon-sponsors-tier 
-          Sponsors
-          %br>
-          large
-        
-        %p.row-content-double 
-
-      %article.row-content-triple
-        %h3.row-content-single.row-title.hackathon-sponsors-tier medium
-        %p.row-content-double        
-
-      %article.row-content-triple
-        %h4.row-content-single.row-title.hackathon-sponsors-tier small
-        %p.row-content-double     
+  -#.row.hackathon-sponsors
+  -#  %section.row-content
+  -#    %article.row-content-triple
+  -#      %h2.row-content-single.row-title.hackathon-sponsors-tier 
+  -#        Sponsors
+  -#        %br>
+  -#        large
+  -#      %p.row-content-double 
+  -#
+  -#    %article.row-content-triple
+  -#      %h3.row-content-single.row-title.hackathon-sponsors-tier medium
+  -#      %p.row-content-double        
+  -#
+  -#    %article.row-content-triple
+  -#      %h4.row-content-single.row-title.hackathon-sponsors-tier small
+  -#      %p.row-content-double     
 
   .row.hackathon-be-sponsor
     %section.row-content
@@ -106,6 +117,7 @@
       %article.row-content-single.row-content-bottom
         %div
           %img{src: 'http://maps.googleapis.com/maps/api/staticmap?center=Piz+Boè&markers=color:0x2c3f51%7C46.5088888,11.8280556&maptype=hybrid&zoom=11&size=300x216&sensor=false'}
+          %br/
           = image_tag 'thanking_top_sponsors_2012.jpg'
 
       %article.row-content-single
@@ -141,3 +153,18 @@
           %br/ 
           %a{href: 'http://www.programmersinpadua.it/', target: '_blank'}
             = image_tag 'logos/programmersinpadua.jpg'
+
+  %footer.rows-footer
+    48rails by
+    %a{href: 'http://www.programmersinpadua.it'} Programmers in Padua
+    &middot;
+    Follow
+    %a{href: 'http://twitter.com/48rails'} @48rails
+    &middot;
+    Reach us at
+    %a{href: 'mailto:ninja@48rails.it'} ninja@48rails.it
+    &middot;
+    %a{href: 'http://2012.48rails.it/?lang=en'} 2012 Edition
+    &middot;
+    missed our  
+    = link_to 'awesome trailer?', trailer_path

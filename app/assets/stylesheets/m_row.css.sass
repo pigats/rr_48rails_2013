@@ -1,5 +1,6 @@
 @import compass
 @import susy
+@import breakpoints
 
 $border-bottom-width: 30px
 $row-min-height: 250px
@@ -9,15 +10,16 @@ $padding-top-and-bottom: 36px
   min-height: $row-min-height
   //border-bottom: $border-bottom-width solid  
 
-  .row-content:after
-    content: ''
-    display: block
-    position: absolute
-    top: 0
-    height: 100%
-    width: columns(4, 12)
-    margin-left: columns(4, 12)
-    z-index: -1
+  +at-breakpoint($desktop)
+    .row-content:after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      height: 100%
+      width: columns(4, 12)
+      margin-left: columns(4, 12)
+      z-index: -1
 
 // content
 
@@ -26,7 +28,6 @@ $padding-top-and-bottom: 36px
   position: relative
   min-height: $row-min-height
   vertical-align: bottom
-  font-weight: 100
   z-index: 1
   +clearfix
 
@@ -37,38 +38,45 @@ $padding-top-and-bottom: 36px
     position: relative
     max-width: 100%
 
-.row-content-single
-  +span-columns(4, 12)
-  
-  &:last-child
-    +omega
 
-  &.row-content-bottom div 
-    max-width: columns(4, 12) - gutter(12)
-
-.row-content-double
-  +span-columns(8, 12)
+.row-content-single, .row-content-double, .row-content-triple
 
   &:last-child
     +omega
 
-  &.row-content-bottom div 
-    max-width: columns(8, 12) - gutter(12)
++at-breakpoint($mobile)
+  .row-content-single, .row-content-double, .row-content-triple
+    +span-columns(6, 6)
 
-.row-content-triple
-  +span-columns(12 omega, 12)
++at-breakpoint($tablet)
+  .row-content-single, .row-content-double, .row-content-triple
+    +span-columns(6, 12)
 
-  &:last-child
-    +omega
++at-breakpoint($desktop)
 
-  &.row-content-bottom div 
-    max-width: columns(12, 12)
+  .row-content-single
+    +span-columns(4, 12)
 
-.row-content-bottom div
-  position: absolute
-  bottom: $padding-top-and-bottom
-  //max-width: columns(4, 12) - gutter(12)
-  
+    &.row-content-bottom div 
+      max-width: columns(4, 12) - gutter(12)
+
+  .row-content-double
+    +span-columns(8, 12)
+
+    &.row-content-bottom div 
+      max-width: columns(8, 12) - gutter(12)
+
+  .row-content-triple
+    +span-columns(12 omega, 12)
+
+    &.row-content-bottom div 
+      max-width: columns(12, 12)
+
+  .row-content-bottom div
+    position: absolute
+    bottom: $padding-top-and-bottom
+    //max-width: columns(4, 12) - gutter(12)
+    
 .row-title, .row-important
   margin: 0
   line-height: 1

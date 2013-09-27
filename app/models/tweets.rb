@@ -22,15 +22,14 @@ class Twitter::Tweet
         entities << {text: text, html: text_html, insertion_index: e.indices[0]}
       end
     end
-    entities.sort {|a, b| a[:insertion_index] <=> b[:insertion_index]}
-    
+    entities.sort! {|a, b| a[:insertion_index] <=> b[:insertion_index]}
+
     offset = 0
     entities.each do |e|
       html.slice!(e[:insertion_index] + offset, e[:text].length)
       html.insert(e[:insertion_index] + offset, e[:html])
       offset = offset + e[:html].length - e[:text].length
     end
-    
     html
   end
 

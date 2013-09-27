@@ -18,6 +18,19 @@
     +span-columns(6)
     margin-bottom: 54px
 
+  .landing-page-get-ticket
+    font-size: 1em
+    text-align: center
+    +span-columns(4, 6)
+    +squish(1, 1, 6)
+
++at-breakpoint($tablet-and-desktop) // tablet and desktop
+
+  .inline-field 
+    +span-columns(5, 7)
+
+  .inline-submit
+    +span-columns(2 omega, 7)
 
 
 +at-breakpoint($tablet-and-desktop)
@@ -51,6 +64,9 @@
     margin-left: - columns(1,7)
 
 
+  .landing-page-get-ticket
+    +pre(1, 7)
+
 +at-breakpoint($desktop)
 
   .landing-page-spotlight
@@ -67,3 +83,6 @@
 
   .landing-page-spotlight-logo
     margin-left: - columns(2,4)
+
+  .landing-page-get-ticket
+    +pre(1, 4)

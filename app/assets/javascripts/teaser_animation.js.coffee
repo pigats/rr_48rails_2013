@@ -10,7 +10,7 @@ class window.TeaserAnimation
                     @player = new YT.Player('teaser-invisible-player',
                       height: '1',
                       width: '0',
-                      videoId: 'HwQMAsOk2dk',
+                      videoId: 'F8JHmjKI0Io', #HwQMAsOk2dk',
                       events:
                         'onReady': this.player_ready; 
                         'onStateChange': this.player_state_change
@@ -89,27 +89,25 @@ class window.TeaserAnimation
   # checkpoints
   checkpoints:    ->
 
+
                     [
-                      {t:  28, target: '.teaser-image[data-order=1]',  duration: 3100},   
-                      {t:  66, target: '.teaser-text[data-order=1]',   duration: 4100},
-                      {t: 104, target: '.teaser-image[data-order=2]',  duration: 3100},                       
-                      {t: 143, target: '.teaser-text[data-order=2]',   duration: 4100},
-                      {t: 178, target: '.teaser-image[data-order=3]',  duration: 3100}, 
-                      {t: 218, target: '.teaser-text[data-order=3]',   duration: 4100},                      
-                      {t: 256, target: '.teaser-image[data-order=4]',  duration: 3100},
-                      {t: 314, target: '.teaser-text[data-order=4]',   duration: 4100},
-                      {t: 332, target: '.teaser-text[data-order=5]',   duration: 4100},
-                      {t: 351, target: '.teaser-text[data-order=6]',   duration: 4100},
-                      # {t: 371
-                      {t: 389, target: '.teaser-text[data-order=7]',   duration: 4100},
-                      {t: 408, target: '.teaser-text[data-order=8]',   duration: 4100},
-                      # {t: 427
-                      {t: 466, target: '.teaser-image[data-order=5]',  duration: 'forever'},
-                      # {t: 484, },
-                      # {t: 503, },
-                      {t: 540, target: '.teaser-text[data-order=9]',   duration: 4100},
-                      {t: 558, target: '.teaser-text[data-order=10]',   duration: 4100},
-                      {t: 578, target: '.teaser-text[data-order=11]',   duration: 4100},
-                      {t: 615, target: '.teaser-text[data-order=12]',   duration: 4100}                  
+                      {t: 27, target: '.teaser-image[data-order=1]',  duration: 3100},   
+                      {t: 60, target: '.teaser-text[data-order=1]',   duration: 4100},
+                      {t: 93, target: '.teaser-image[data-order=2]',  duration: 3100},                       
+                      {t: 126, target: '.teaser-text[data-order=2]',   duration: 4100},
+                      {t: 157, target: '.teaser-image[data-order=3]',  duration: 3100}, 
+                      {t: 194, target: '.teaser-text[data-order=3]',   duration: 4100},                      
+                      {t: 227, target: '.teaser-image[data-order=4]',  duration: 3100},
+                      {t: 276, target: '.teaser-text[data-order=4]',   duration: 4100},
+                      {t: 291, target: '.teaser-text[data-order=5]',   duration: 4100},
+                      {t: 308, target: '.teaser-text[data-order=6]',   duration: 4100},
+                      {t: 342, target: '.teaser-text[data-order=7]',   duration: 4100},
+                      {t: 359, target: '.teaser-text[data-order=8]',   duration: 4100},
+                      {t: 411, target: '.teaser-image[data-order=5]',  duration: 'forever'},
+                      {t: 477, target: '.teaser-text[data-order=9]',   duration: 4100},
+                      {t: 493, target: '.teaser-text[data-order=10]',   duration: 4100},
+                      {t: 510, target: '.teaser-text[data-order=11]',   duration: 4100},
+                      {t: 545, target: '.teaser-text[data-order=12]',   duration: 4100}                  
                     ]
+
 

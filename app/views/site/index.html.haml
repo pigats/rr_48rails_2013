@@ -103,14 +103,22 @@
         %h2.row-important 
           %a{href: 'https://twitter.com/intent/tweet?source=webclient&text=Next+19-20+Oct+Rails+ninjas+are+gathering+in+Padua+to+fight+the+RailsRumble.+Join+them%21+http%3A%2F%2Fwww.48rails.it+%2348rails', target: '_blank'} #48rails
 
-  -#.row.hackathon-sponsors
-  -#  %section.row-content
-  -#    %article.row-content-triple
-  -#      %h2.row-content-single.row-title.hackathon-sponsors-tier 
-  -#        Sponsors
-  -#        %br>
-  -#        large
-  -#      %p.row-content-double 
+  .row.hackathon-sponsors
+    %section.row-content
+      %article.row-content-triple
+        %h2.row-content-single.row-title.hackathon-sponsors-tier 
+          Large
+          %br>
+          sponsors
+        %ul.row-content-double
+          %li
+            %a{href: 'http://www.timerepublik.com/', target: '_blank'}
+              = image_tag 'logos/timerepublik.png'
+
+          %li.hackathon-sponsors-large
+            %a{href: 'http://www.mikamai.com/', target: '_blank'}
+              = image_tag 'logos/mikamai.png'
+
   -#
   -#    %article.row-content-triple
   -#      %h3.row-content-single.row-title.hackathon-sponsors-tier medium

@@ -71,6 +71,12 @@
   section:after
     background-color: #3898d4
 
+  li
+    margin-top: 36px
+
+    +at-breakpoint($tablet-and-desktop)
+      &:first-child
+        margin-top: 0
 
 
 .hackathon-partners-and-organizers
@@ -82,25 +88,10 @@
   section:after
     background-color: #e77e25
 
-  ul 
-    list-style-type: none
-    clear: left
-    +clearfix
-
-    &:not(:last-child)
-      margin-bottom: 54px
-
-  li
-    float: left 
+  li 
     margin: 0 10px 9px 0
     background: white
-    text-align: center
 
-    &:last-child
-      margin-bottom: 0
-  
-    a 
-      border-bottom: none
 
   .hackathon-partners-and-organizers-square
     height: 125px
@@ -142,6 +133,26 @@
     max-width: 100%
 
 
+.hackathon-partners-and-organizers, .hackathon-sponsors
+
+  ul 
+    list-style-type: none
+    +clearfix
+
+    &:not(:last-child)
+      margin-bottom: 54px
+
+  li
+    float: left 
+    text-align: center
+
+    &:last-child
+      margin-bottom: 0
+  
+    a 
+      border-bottom: none
+
+
 
 .hackathon-be-sponsor
   background-color: #354a5f // night-blue
@@ -167,7 +178,9 @@
 
 
 .hackathon-sponsors-tier
-  text-align: right
+  text-align: left
+  +at-breakpoint($desktop)
+    text-align: right
 
 .hackathon-be-sponsor-prospectus
   padding: 15px 0 5px 30px

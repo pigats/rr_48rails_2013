@@ -82,6 +82,66 @@
   section:after
     background-color: #e77e25
 
+  ul 
+    list-style-type: none
+    clear: left
+    +clearfix
+
+    &:not(:last-child)
+      margin-bottom: 54px
+
+  li
+    float: left 
+    margin: 0 10px 9px 0
+    background: white
+    text-align: center
+
+    &:last-child
+      margin-bottom: 0
+  
+  a 
+    border-bottom: none
+
+  .hackathon-partners-and-organizers-square
+    height: 125px
+    +at-breakpoint($mobile)
+      width: 49%
+
+      &:nth-child(2n+1)
+        margin-right: 2%
+
+      &:nth-child(2n)
+        margin-right: 0
+
+  .hackathon-partners-and-organizers-rect
+    height: 125px
+    +at-breakpoint($mobile)
+      width: 100%
+      margin-right: 0 
+
+  .hackathon-partners-and-organizers-face
+    background: transparent
+    height: 32px
+    margin: 0
+    +at-breakpoint($tablet)
+      height: 40px
+    +at-breakpoint($desktop)
+      height: 54px
+      margin: 0 10px 0 0
+
+
+    img 
+      height: 32px
+      +at-breakpoint($tablet)
+        height: 40px
+      +at-breakpoint($desktop)
+        height: 54px
+
+  .hackathon-partners-and-organizers-pip
+    width: 499px
+    max-width: 100%
+
+
 
 .hackathon-be-sponsor
   background-color: #354a5f // night-blue

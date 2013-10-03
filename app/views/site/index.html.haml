@@ -89,7 +89,7 @@
 
       %article.row-content-single
         - @faces.each do |face|
-          %img{src: face[:src], alt: face[:name], class: 'hackathon-face'}
+          %img{src: face[:src], alt: face[:name], class: 'hackathon-face', title: face[:name]}
       %article.row-content-single
         %h2.row-title Ninjas are social, too
         %p We set up a facebook group where you can meet the other Rails ninjas, and maybe find your next teammate:
@@ -112,11 +112,11 @@
           sponsors
         %ul.row-content-double
           %li
-            %a{href: 'http://www.timerepublik.com/', target: '_blank'}
+            %a{href: 'http://www.timerepublik.com/', target: '_blank', title: 'Timerepublik'}
               = image_tag 'logos/timerepublik.png'
 
           %li.hackathon-sponsors-large
-            %a{href: 'http://www.mikamai.com/', target: '_blank'}
+            %a{href: 'http://www.mikamai.com/', target: '_blank', title: 'Mikamai'}
               = image_tag 'logos/mikamai.png'
 
   
@@ -125,10 +125,10 @@
         
         %ul.row-content-double
           %li
-            %a{href: 'http://github.com/', target: '_blank'}
+            %a{href: 'http://github.com/', target: '_blank', title: 'GitHub'}
               = image_tag 'logos/github.png'   
           %li
-            %a{href: 'http://pragprog.com/', target: '_blank'}
+            %a{href: 'http://pragprog.com/', target: '_blank', title: 'The Pragmatic Bookshelf'}
               = image_tag 'logos/pragprog.png'                
   -#
   -#    %article.row-content-triple
@@ -174,44 +174,47 @@
       %article.row-content-double
         %ul
           %li.hackathon-partners-and-organizers-square
-            %a{href: 'http://rubyitalia.teamartist.com/', target: '_blank'}
+            %a{href: 'http://rubyitalia.teamartist.com/', target: '_blank', title: 'Associazione Ruby Italia'}
               = image_tag 'logos/ruby-it.jpg'
           %li.hackathon-partners-and-organizers-square
-            %a{href: 'http://railsgirls.com/milan', target: '_blank'}
+            %a{href: 'http://railsgirls.com/milan', target: '_blank', title: 'Rails Girls'}
               = image_tag 'logos/railsgirls.jpg'
           %li.hackathon-partners-and-organizers-square
-            %a{href: 'http://www.whymca.org/', target: '_blank'}
+            %a{href: 'http://www.whymca.org/', target: '_blank', title: 'WHYMCA'}
               = image_tag 'logos/whymca.jpg'
           %li.hackathon-partners-and-organizers-square
-            %a{href: 'http://www.talentgarden.it/', target: '_blank'}
+            %a{href: 'http://hackatron.org/', target: '_blank', title: 'Hackatron'}
+              = image_tag 'logos/hackatron.jpg'
+          %li.hackathon-partners-and-organizers-square
+            %a{href: 'http://www.talentgarden.it/', target: '_blank', title: 'Talent Garden'}
               = image_tag 'logos/tag.jpg'
           %li.hackathon-partners-and-organizers-rect
-            %a{href: 'http://www.webdebs.org/', target: '_blank'}
+            %a{href: 'http://www.webdebs.org/', target: '_blank', title: 'WEBdeBS'}
               = image_tag 'logos/webdebs.jpg'
           %li.hackathon-partners-and-organizers-rect
-            %a{href: 'http://www.digitalmeet.it/', target: '_blank'}
+            %a{href: 'http://www.digitalmeet.it/', target: '_blank', title: 'Digital Meet'}
               = image_tag 'logos/digital-meet.jpg'
         
         %ul 
         
           %li.hackathon-partners-and-organizers-face
-            %a{href: 'http://twitter.com/brigugraphic', target: '_blank'}
+            %a{href: 'http://twitter.com/brigugraphic', target: '_blank', title: '@BriguGraphic'}
               = image_tag 'brigugraphic.png'
 
           %li.hackathon-partners-and-organizers-face
-            %a{href: 'http://twitter.com/ogeidix', target: '_blank'}
+            %a{href: 'http://twitter.com/ogeidix', target: '_blank', title: '@ogeidix'}
               = image_tag 'ogeidix.png'
 
           %li.hackathon-partners-and-organizers-face
-            %a{href: 'http://twitter.com/pigatss', target: '_blank'}
+            %a{href: 'http://twitter.com/pigatss', target: '_blank', title: '@pigatss'}
               = image_tag 'pigatss.png'
 
           %li.hackathon-partners-and-organizers-face
-            %a{href: 'http://twitter.com/realfuzzy', target: '_blank'}
+            %a{href: 'http://twitter.com/realfuzzy', target: '_blank', title: '@realfuzzy'}
               = image_tag 'realfuzzy.png'
           
           %li.hackathon-partners-and-organizers-rect.hackathon-partners-and-organizers-pip
-            %a{href: 'http://www.programmersinpadua.it/', target: '_blank'}
+            %a{href: 'http://www.programmersinpadua.it/', target: '_blank', title: 'Programmers in Padua'}
               = image_tag 'logos/programmersinpadua.jpg'
 
   %footer.rows-footer

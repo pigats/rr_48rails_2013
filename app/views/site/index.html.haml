@@ -68,7 +68,8 @@
           <iframe  src="https://www.eventbrite.it/tickets-external?eid=4634644346&ref=etckt&v=2" frameborder="0" height="385" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
 
           <div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.it/r/etckt">Registrazione dell'evento online</a><span style="color:#ddd;"> per </span><a style="color:#ddd; text-decoration:none;" target="_blank" href="https://48rails.eventbrite.it?ref=etckt">48rails</a> <span style="color:#ddd;">con tecnologia</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.it?ref=etckt">Eventbrite</a></div></div>
-      
+        
+
         %h4.row-important New: Ninjize your website!
         %p 
           Let everybody know you're coming! Add this script to your website:
@@ -104,6 +105,7 @@
             through their awesome website,
             %a{href: 'http://railsrumble.com', target: '_blank'} http://railsrumble.com 
 
+  = render partial: 'discount'
 
   .row.hackathon-social
     %section.row-content
@@ -163,10 +165,16 @@
           %li
             %a{href: 'http://pragprog.com/', target: '_blank', title: 'The Pragmatic Bookshelf'}
               = image_tag 'logos/pragprog.png'                
-  -#
-  -#    %article.row-content-triple
-  -#      %h4.row-content-single.row-title.hackathon-sponsors-tier small
-  -#      %p.row-content-double     
+  
+      %article.row-content-triple
+        %h4.row-content-single.row-title.hackathon-sponsors-tier small
+        %ul.row-content-double
+          %li
+            %a{href: 'http://www.seesaw.it/', target: '_blank', title: 'SeeSaw'}
+              = image_tag 'logos/seesaw.png'
+          %li
+            %a{href: 'http://www.dasco.it/', target: '_blank', title: 'DASCo'}
+              = image_tag 'logos/dasco.png'
 
   .row.hackathon-be-sponsor
     %section.row-content

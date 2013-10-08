@@ -91,10 +91,11 @@
     background-color: #3898d4
 
   li
-    margin-top: 36px
-    
-    +at-breakpoint($tablet-and-desktop)
-      &:first-child
+    margin-bottom: 36px
+
+    &:first-of-type
+      margin-top: 36px
+      +at-breakpoint($tablet-and-desktop)
         margin-top: 0
 
 

@@ -10,6 +10,25 @@
   +at-breakpoint($mobile)
     color: transparent      
 
+
+.hackathon-prizes
+  background-color: #e84c3d // red
+  border-color: #c33c2b
+  +at-breakpoint($tablet-and-desktop)
+    +background-image(linear-gradient(left, #e84c3d 50%, #c33c2b 50%))
+  
+  section:after
+    background-color: #c33c2b
+
+  article:nth-of-type(2), article:nth-of-type(3)
+    text-align: center
+
+  +at-breakpoint($tablet)
+    article:nth-of-type(2), article:nth-of-type(3)
+      float: right
+      +omega
+
+
 .hackathon-social
   background-color: #f0c419 // yellow
   border-color: #f49e20

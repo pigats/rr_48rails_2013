@@ -2,22 +2,27 @@
 @import susy
 @import breakpoints
 
+@mixin colorize($left_color, $right_color, $left)
+  background-color: $right_color
+  border-color: $left_color
+  +at-breakpoint($tablet-and-desktop)
+    +background-image(linear-gradient(left, $left_color 50%, $right_color 50%))
+  section:after
+    @if $left
+      background-color: $left_color
+    @else
+      background-color: $right_color
+
 .hackathon-title
   background-color: white
-  color: #4dba6d   
-  text-align: center 
+  color: #4dba6d
+  text-align: center
   +nowrap
   +at-breakpoint($mobile)
-    color: transparent      
+    color: transparent
 
 .hackathon-social
-  background-color: #f0c419 // yellow
-  border-color: #f49e20
-  +at-breakpoint($tablet-and-desktop)
-    +background-image(linear-gradient(left, #f0c419 50%, #f49e20 50%))
-
-  section:after
-    background-color: #f0c419
+  @include colorize(#f0c419, #f49e20, true)
 
   +at-breakpoint($mobile)
     article:first-of-type, article:nth-of-type(2)
@@ -32,44 +37,25 @@
       background: transparent image_url('ninja_gru_move.png') no-repeat 90% 100.5%
 
 
-
 .hackathon-description
-  background-color: #4dba6d // green
-  border-color: #1eaf60
-  +at-breakpoint($tablet-and-desktop)
-    +background-image(linear-gradient(left, #1eaf60 50%, #4dba6d 50%))
-
-  section:after
-    background-color: #4dba6d
+  @include colorize(#4dba6d, #1eaf60, false)
 
   +at-breakpoint($tablet)
     article:nth-of-type(2)
       float: right
       +omega
 
-.hackathon-tickets
-  background-color: #965ca5 // violet
-  border-color: #8a4c9e   
-  +at-breakpoint($desktop) 
-    +background-image(linear-gradient(left, #8a4c9e 50%, #965ca5 50%))
 
-  section:after
-    background-color: #8a4c9e  
+.hackathon-tickets
+  @include colorize(#965ca5, #8a4c9e, true)
 
   +at-breakpoint($tablet)
     article
       +span-columns(12, 12)
 
 
-
 .hackathon-sponsors
-  background-color: #3898d4 // blue
-  border-color: #2780bb 
-  +at-breakpoint($tablet-and-desktop)
-    +background-image(linear-gradient(left, #2780bb 50%, #3898d4 50%))
-
-  section:after
-    background-color: #3898d4
+  @include colorize(#3898d4, #2780bb, false)
 
   li
     margin-top: 36px
@@ -79,16 +65,15 @@
         margin-top: 0
 
 
+.hackathon-2012
+  @include colorize(#222, #333, true)
+  a
+    border: 0px
+
 .hackathon-partners-and-organizers
-  background-color: #e77e25 // orange
-  border-color: #d65627  
-  +at-breakpoint($tablet-and-desktop)
-    +background-image(linear-gradient(left, #d65627 50%, #e77e25 50%))
+  @include colorize(#d65627, #e77e25, false)
 
-  section:after
-    background-color: #e77e25
-
-  li 
+  li
     margin: 0 10px 9px 0
     background: white
 
@@ -108,7 +93,7 @@
     height: 125px
     +at-breakpoint($mobile)
       width: 100%
-      margin-right: 0 
+      margin-right: 0
 
   .hackathon-partners-and-organizers-face
     background: transparent
@@ -121,7 +106,7 @@
       margin: 0 10px 0 0
 
 
-    img 
+    img
       height: 32px
       +at-breakpoint($tablet)
         height: 40px
@@ -135,7 +120,7 @@
 
 .hackathon-partners-and-organizers, .hackathon-sponsors
 
-  ul 
+  ul
     list-style-type: none
     margin-top: 0
     +clearfix
@@ -144,13 +129,13 @@
       margin-bottom: 54px
 
   li
-    float: left 
+    float: left
     text-align: center
 
     &:last-child
       margin-bottom: 0
-  
-    a 
+
+    a
       border-bottom: none
 
 

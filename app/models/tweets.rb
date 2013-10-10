@@ -17,7 +17,7 @@ class Twitter::Tweet
     entities = []
     [:user_mentions, :hashtags, :urls, :media].each do |t|
       self[t].each do |e|
-        text = full_text[e.indices[0]...e.indices[1]]       
+        text = full_text[e.indices[0]...e.indices[1]]
         text_html = self.class.send(t.to_s + '_to_html', text, e)
         entities << {text: text, html: text_html, insertion_index: e.indices[0]}
       end

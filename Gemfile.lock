@@ -50,6 +50,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.1)
+    fancybox2-rails (0.2.5)
+      railties (>= 3.1.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     fssm (0.2.10)
@@ -153,6 +155,7 @@ DEPENDENCIES
   animation
   coffee-rails (~> 4.0.0)
   compass-rails
+  fancybox2-rails
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails

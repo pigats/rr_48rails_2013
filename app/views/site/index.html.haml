@@ -62,13 +62,13 @@
           
         %p 
           (See it in action on &nbsp;
-          %a{href: 'http://www.programmersinpadua.it', target: '_blank'}> http://www.programmersinpadua.it
+          %a{href: 'http://www.programmersinpadua.it', target: '_blank'}> programmersinpadua.it
           )
 
 
       %article.row-content-double
         - @teams.each do |team|
-          .hackathon-team{style: "background-image: url('/assets/pagoda_#{team.colour}.png');"}
+          .hackathon-team{style: "background-image: url(#{image_path('pagoda_' + team.colour + '.png')});"}
             %h4.row-important.hackathon-team-name= team.name
             %ul.hackathon-team-members
               - team.ninjas.each do |ninja|

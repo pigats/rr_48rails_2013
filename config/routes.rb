@@ -1,4 +1,8 @@
 Rr48rails2013::Application.routes.draw do
+  resources :ninjas
+
+  resources :teams
+
   root 'site#index'
 
   get 'trailer' => 'site#landing_page'

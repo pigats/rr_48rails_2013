@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @team.name
+%p
+  %b Colour:
+  = @team.colour
+%p
+  %b Order:
+  = @team.order
+%p
+  %b Prize:
+  = @team.prize_id
+
+= link_to 'Edit', edit_team_path(@team)
+\|
+= link_to 'Back', teams_path

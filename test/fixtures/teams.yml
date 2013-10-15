@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  colour: MyString
+  order: 1
+  prize_id: MyString
+
+two:
+  name: MyString
+  colour: MyString
+  order: 1
+  prize_id: MyString

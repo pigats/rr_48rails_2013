@@ -1,0 +1,31 @@
+@import compass
+@import susy
+@import breakpoints
+
+.hackathon-team
+  +box-sizing(border-box)
+  min-height: 360px
+  padding: 18px 0 0 10px
+  //border-bottom: 2px solid whiteSmoke
+  margin-bottom: 1em  
+  background-position: right bottom
+  background-repeat: no-repeat 
+  background-color: rgba(255,255,255,.3) 
+
+  +at-breakpoint($desktop)
+    +span-columns(4, 8)
+
+    &:nth-of-type(2n)
+      +omega
+
+  .hackathon-face
+    width: 48px
+    border: 2px solid white
+    vertical-align: middle
+    background-color: white
+
+.hackathon-team-name
+  text-align: center
+
+.hackathon-team-members
+  list-style-type: none

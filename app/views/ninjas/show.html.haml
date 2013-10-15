@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @ninja.name
+%p
+  %b Twitter:
+  = @ninja.twitter
+%p
+  %b Facebook:
+  = @ninja.facebook
+%p
+  %b Team:
+  = @ninja.team_id
+%p
+  %b Prize:
+  = @ninja.prize_id
+
+= link_to 'Edit', edit_ninja_path(@ninja)
+\|
+= link_to 'Back', ninjas_path

@@ -1,0 +1,27 @@
+%h1 Listing ninjas
+
+%table
+  %tr
+    %th Name
+    %th Twitter
+    %th Facebook
+    %th Team
+    %th Prize
+    %th
+    %th
+    %th
+
+  - @ninjas.each do |ninja|
+    %tr
+      %td= ninja.name
+      %td= ninja.twitter
+      %td= ninja.facebook
+      %td= ninja.team_id
+      %td= ninja.prize_id
+      %td= link_to 'Show', ninja
+      %td= link_to 'Edit', edit_ninja_path(ninja)
+      %td= link_to 'Destroy', ninja, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Ninja', new_ninja_path

@@ -37,51 +37,48 @@
             %li Caffeine, in every liquid form
             %li Metrics-based prizes (no faulty jury)
 
-  .row.hackathon-tickets
+  
+ 
+
+  .row.hackathon-teams
     %section.row-content
 
-      %article.row-content-double
-        %h2.row-title 19&ndash;20 October
-        
-        :plain
-          <div style="width:100%; text-align:left;">
-
-          <iframe  src="https://www.eventbrite.it/tickets-external?eid=4634644346&ref=etckt&v=2" frameborder="0" height="385" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
-
-          <div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.it/r/etckt">Registrazione dell'evento online</a><span style="color:#ddd;"> per </span><a style="color:#ddd; text-decoration:none;" target="_blank" href="https://48rails.eventbrite.it?ref=etckt">48rails</a> <span style="color:#ddd;">con tecnologia</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.it?ref=etckt">Eventbrite</a></div></div>
-        
-        %h4.row-important Special needs &amp; discounts
+      %article.row-content-single
+        %h2.row-title Our teams
         %p 
-          Buying tickets for your whole team? Need invoice? Have special needs? Ask 
-          %a{href: 'mailto:ninja@48rails.it'} ninja@48rails.it  
-          %br/
-          LARGE sponsors get up to 4 &ldquo;Event + Bed&rdquo; tickets for free.
-          %a{href: 'https://www.dropbox.com/s/t40lmm83k3q0gqq/48rails_2013_sponsorship.pdf', target: '_blank'} Learn more
-          %br/
-          Did you take part in 48rails 2012? 
-          %a{href: 'mailto:ninja@48rails.it'} Ask for a discount!
-
-        %h4.row-important Ninjize your website
+          We're almost ready to hack with some very fine folks, split in 8 awesome teams.
         %p 
-          Let everybody know you're coming! Add this script to your website:
-          %br/
-          %code
-            &lt;script type="text/javascript" src="http://www.48rails.it/javascripts/ninjize.js"&gt; &lt;/script&gt;
-          %br/
+          Ninjas from all over the country are warming up, stretching their fingers and getting ready to drink insane amounts of caffeine.
+        %p 
+          They're going to compete on creativity, execution and&hellip; (check back soon to see what's in store for them!)
+
+        %p 
+          Are you one of them? Let everybody know you're coming! Add this script to your website: 
+        %code 
+          &lt;script type="text/javascript" 
+          src="http://www.48rails.it/
+          javascripts/ninjize.js"&gt; 
+          &lt;/script&gt; 
+          
+        %p 
           (See it in action on &nbsp;
           %a{href: 'http://www.programmersinpadua.it', target: '_blank'}> http://www.programmersinpadua.it
           )
 
 
-      %article.row-content-single
-        %h2.row-title Time is running out
+      %article.row-content-double
+        - @teams.each do |team|
+          .hackathon-team{style: "background-image: url('/assets/pagoda_#{team.colour}.png');"}
+            %h4.row-important.hackathon-team-name= team.name
+            %ul.hackathon-team-members
+              - team.ninjas.each do |ninja|
+                %li
+                  %img{src: ninja.face, class: 'hackathon-face', }
+                  - unless ninja.twitter.blank?
+                    %a{href: "http://twitter.com/#{ninja.twitter}", target: '_blank'}= ninja.name 
+                  - else
+                    = ninja.name
 
-        %p The moment is now. Get your ticket to the most exciting weekend you'll have in a long time.
-        %p Also, remind your teammates to buy theirs, and register your team to the RailsRumble
-        %h4.row-important before October, 13th
-        %p 
-          through their awesome website,
-          %a{href: 'http://railsrumble.com', target: '_blank'} http://railsrumble.com
 
   .row.hackathon-prizes
     %section.row-content

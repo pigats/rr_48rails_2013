@@ -1,0 +1,25 @@
+= form_for @ninja do |f|
+  - if @ninja.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@ninja.errors.count, "error")} prohibited this ninja from being saved:"
+      %ul
+        - @ninja.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :twitter
+    = f.text_field :twitter
+  .field
+    = f.label :facebook
+    = f.text_field :facebook
+  .field
+    = f.label :team_id
+    = f.text_field :team_id
+  .field
+    = f.label :prize_id
+    = f.text_field :prize_id
+  .actions
+    = f.submit 'Save'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014231918) do
+ActiveRecord::Schema.define(version: 20131015180842) do
 
   create_table "ninjas", force: true do |t|
     t.string   "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131014231918) do
   create_table "teams", force: true do |t|
     t.string   "name"
     t.string   "colour"
-    t.integer  "order"
+    t.integer  "sort"
     t.string   "prize_id"
     t.datetime "created_at"
     t.datetime "updated_at"

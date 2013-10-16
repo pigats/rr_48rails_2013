@@ -8,6 +8,17 @@
     = favicon_link_tag
     %meta{:name=>"viewport", :content=>"width=device-width"}
 
+
+    %meta{property: 'og:url', content: 'http://www.48rails.it'} 
+    %meta{property: 'og:title', content: '48rails 2013'} 
+    %meta{property: 'og:image', content: image_url('48rails_og.jpg')} 
+    %meta{property: 'og:type', content: 'event'}
+    %meta{property: 'og:description', content: 'On the occasion of RailsRumble, 48rails gathers the cream of the italian Ruby and Rails community — whom we call the “ninjas” — in the very same place, fulfilling all their practical needs so that they can focus on hacking for 48 hours straight'}
+    %meta{property: 'event:start_time', content: '2013-10-19T00:00:00'}
+    %meta{property: 'event:end_time', content: '2013-10-20T23:59:59'}
+    %meta{property: 'event:location:latitude', content: '45.4070613'}
+    %meta{property: 'event:location:longitude', content: '11.8918798'}
+
     - if Rails.env.production?
       :javascript
 

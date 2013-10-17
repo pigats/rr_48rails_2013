@@ -1,18 +1,46 @@
-%p#notice= notice
+- content_for :facebook_opengraph do
+  %meta{property: 'og:url', content: request.original_url} 
+  %meta{property: 'og:title', content: "#{@team.name} team is fighting the RailsRumble @ 48rails"} 
+  %meta{property: 'og:image', content: image_url('48rails_og.jpg')} 
+  %meta{property: 'og:type', content: '48rails RailsRumble team'}
+  %meta{property: 'og:description', content: "We are team #{@team.name}, one of the eight ones fighting the RailsRumble at 48rails during a 48 hours long hackathon. Like us!"}
+  %meta{property: 'og:site_name', content: '48rails.it'}
+  %meta{property: 'og:see_also', content: @team.url}
 
-%p
-  %b Name:
-  = @team.name
-%p
-  %b Colour:
-  = @team.colour
-%p
-  %b Sort:
-  = @team.sort
-%p
-  %b Prize:
-  = @team.prize_id
+%body.rows.teams
+  :plain
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-= link_to 'Edit', edit_team_path(@team)
-\|
-= link_to 'Back', teams_path
+
+  .row.team{:'data-name' => @team.name}
+    %section.row-content
+
+      %article.row-content-double
+        %h2.row-title= @team.name
+ 
+        .team-facebook-like
+          :plain
+            <div class="fb-like" data-width="50" data-height="10" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="true" data-send="false"></div>
+
+      %article.row-content-single
+        %b Members :
+        %ul.hackathon-team-members
+          - @team.ninjas.each do |ninja|
+            %li
+              %img{src: ninja.face, class: 'hackathon-face', }
+              - unless ninja.twitter.blank?
+                %a{href: "http://twitter.com/#{ninja.twitter}", target: '_blank'}= ninja.name 
+              - else
+                = ninja.name
+
+
+  = render partial: 'site/footer'

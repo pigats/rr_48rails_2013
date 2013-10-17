@@ -1,3 +1,14 @@
+- content_for :facebook_opengraph do
+  %meta{property: 'og:url', content: 'http://www.48rails.it'} 
+  %meta{property: 'og:title', content: '48rails 2013'} 
+  %meta{property: 'og:image', content: image_url('48rails_og.jpg')} 
+  %meta{property: 'og:type', content: 'event'}
+  %meta{property: 'og:description', content: 'On the occasion of RailsRumble, 48rails gathers the cream of the italian Ruby and Rails community — whom we call the “ninjas” — in the very same place, fulfilling all their practical needs so that they can focus on hacking for 48 hours straight'}
+  %meta{property: 'event:start_time', content: '2013-10-19T00:00:00'}
+  %meta{property: 'event:end_time', content: '2013-10-20T23:59:59'}
+  %meta{property: 'event:location:latitude', content: '45.4070613'}
+  %meta{property: 'event:location:longitude', content: '11.8918798'}
+
 %body.rows
 
   .row.hackathon-title
@@ -262,19 +273,6 @@
             %a{href: 'http://www.programmersinpadua.it/', target: '_blank', title: 'Programmers in Padua'}
               = image_tag 'logos/programmersinpadua.jpg'
 
-  %footer.rows-footer
-    48rails by
-    %a{href: 'http://www.programmersinpadua.it'} Programmers in Padua
-    &middot;
-    Follow
-    %a{href: 'http://twitter.com/48rails'} @48rails
-    &middot;
-    Reach us at
-    %a{href: 'mailto:ninja@48rails.it'} ninja@48rails.it
-    &middot;
-    %a{href: 'http://2012.48rails.it/?lang=en'} 2012 Edition
-    &middot;
-    missed our  
-    = link_to 'awesome trailer?', trailer_path
+  = render partial: 'footer'
 
   = render partial: 'discount'

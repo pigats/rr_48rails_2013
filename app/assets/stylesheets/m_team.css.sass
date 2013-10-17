@@ -1,0 +1,84 @@
+@import compass
+@import susy
+@import breakpoints
+
+.team
+
+  article:first-of-type
+    +omega
+
+  article:nth-of-type(2)
+    +at-breakpoint($tablet-and-desktop)  
+      margin-top: 63px + 18px 
+
+  section
+    min-height: 600px
+
+  &[data-name=Mikamayhem]
+    background-color: #4dba6d // green
+    +at-breakpoint($tablet-and-desktop)
+      +background-image(linear-gradient(left, #1eaf60 50%, #4dba6d 50%))
+
+    section:after
+      background-color: #4dba6d
+
+  &[data-name=TIMEREPUBLIK]
+    background-color: #f0c419 // yellow
+    +at-breakpoint($tablet-and-desktop)
+      +background-image(linear-gradient(left, #f49e20 50%, #f0c419 50%))
+
+    section:after
+      background-color: #f0c419
+
+
+  &[data-name=call_me_maybe]
+    background-color: #e77e25 // orange
+    +at-breakpoint($tablet-and-desktop)
+      +background-image(linear-gradient(left, #d65627 50%, #e77e25 50%))
+
+    section:after
+      background-color: #e77e25
+
+  &[data-name=PaduaNinja]
+    background-color: #3898d4 // blue
+    +at-breakpoint($tablet-and-desktop)
+      +background-image(linear-gradient(left, #2780bb 50%, #3898d4 50%))
+
+    section:after
+      background-color: #3898d4
+
+  &[data-name=Rubysconi]
+    background-color: #c33c2b // red
+    +at-breakpoint($tablet-and-desktop)
+      +background-image(linear-gradient(left, #c33c2b 50%, #e84c3d 50%))
+    
+    section:after
+      background-color: #e84c3d
+
+  &[data-name=SpazzaRubini]
+    background-color: #354a5f // night-blue
+    +at-breakpoint($tablet-and-desktop)
+      +background-image(linear-gradient(left, #2c3f51 50%, #354a5f 50%))
+
+    section:after
+      background-color: #354a5f 
+
+  &[data-name=Antani]
+    background-color: rgb(72,43,19) // brown
+    +at-breakpoint($desktop) 
+      +background-image(linear-gradient(left, rgb(72,43,19) 50%, rgb(110,74,47) 50%))
+
+    section:after
+      background-color: rgb(110,74,47)      
+
+
+  &[data-name=一本気]
+    background-color: #965ca5 // purple
+    +at-breakpoint($desktop) 
+      +background-image(linear-gradient(left, #8a4c9e 50%, #965ca5 50%))
+
+    section:after
+      background-color: #965ca5  
+
+.team-facebook-like
+  margin: 36px 0

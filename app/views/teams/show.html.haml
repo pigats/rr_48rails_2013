@@ -31,6 +31,11 @@
           :plain
             <div class="fb-like" data-width="50" data-height="10" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="true" data-send="false"></div>
 
+        .team-twitter-hashtag
+          twitter hashtag:
+          %h4.row-important
+            = "#" + @team.hashtag 
+            \#48rails
       %article.row-content-single
         %b Members :
         %ul.hackathon-team-members
@@ -41,6 +46,7 @@
                 %a{href: "http://twitter.com/#{ninja.twitter}", target: '_blank'}= ninja.name 
               - else
                 = ninja.name
+        = link_to raw('&leftarrow; back to home'), root_path, class: 'team-back-link'
 
 
   = render partial: 'site/footer'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017231142) do
+ActiveRecord::Schema.define(version: 20131018214309) do
 
   create_table "ninjas", force: true do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20131017231142) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "url"
+    t.string   "hashtag"
   end
 
 end

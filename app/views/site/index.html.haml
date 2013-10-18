@@ -80,7 +80,8 @@
       %article.row-content-double
         - @teams.each do |team|
           .hackathon-team{style: "background-image: url(#{image_path('pagoda_' + team.colour + '.png')});"}
-            %h4.row-important.hackathon-team-name= team.name
+            %h4.row-important.hackathon-team-name
+              =link_to team.name, team_path(team)
             %ul.hackathon-team-members
               - team.ninjas.each do |ninja|
                 %li

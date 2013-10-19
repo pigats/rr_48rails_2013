@@ -109,10 +109,64 @@
         %p There will be prizes for every participant. Because we like you, that's why.
 
 
-      %article.row-content-single
+      %article.row-content-single.hackathon-prizes-image
         = image_tag 'pebble.png'
-      %article.row-content-single
+      %article.row-content-single.hackathon-prizes-image
         = image_tag 'leapmotion.png', style: 'margin-bottom: -50px;' 
+
+    %section.row-content
+      %article.row-content-single
+        %h3.row-important Metrics
+      %article.row-content-double
+        %p Juries are faulty! We only let beautiful math to assign prizes at 48rails. We have 3 team metrics and 2 solo metrics. Prizes will be granted to:
+        %ul
+          %li The first prize to the team with the highest overall score
+          %li Prizes to the first ranked teams in each team metric
+          %li Prizes to the first ranked solo in each solo metric
+
+    %section.row-content
+      %article.row-content-single
+        %h3.row-important Code
+        %p We are giving prizes to the best teams based on the quality of their work&hellip;
+
+      %article.row-content-single
+        %h4.row-important Load Constancy
+        %p Teams are going to produce a big volume of code in a very short amount of time, but this is not a good excuse to indulge in bad programming habits. We expect an almost constant flow of work during the whole length of the hackathon (commit soon, commit often).
+      %article.row-content-single      
+        %h4.row-important Teamwork
+        %p Teams are small (1 to 4 people), so every member needs to earn its place. More, time is wasted whenever more than one work on the same single piece of the software. We expect an equal work distribution, and a clear separation of responsibilities.
+      
+    %section.row-content
+      %article.row-content-single
+        %h3.row-important Social
+        %p &hellip; on how much influent they are on the social networks&hellip;
+
+      %article.row-content-single      
+        %h4.row-important Propaganda
+        %p What teams are working on would be worthless if nobody is going to use it, so let's spread the voice aloud! We expect each team to build buzz on facebook and twitter, through the opengraph object and hashtag we assigned them.
+
+      %article.row-content-single
+        %b Instructions for:
+        %ul
+          - @teams.each do |team|
+            %li= link_to team.name, team_path(team)
+
+    %section.row-content
+      %article.row-content-single
+        %h3.row-important Solo
+        %p &hellip; and to the most distinguished solos.
+
+      %article.row-content-single
+        %h4.row-important Стаханов
+        %p Devs in general are known to work a lot at night, so we are looking for the single most nightly one.
+      %article.row-content-single
+        %h4.row-important #48frag
+        %p 
+          Geeks love videogames, so we planned a break at a random time for a 48 minutes 
+          %a{href: 'http://openarena.ws/', target: '_blank'} OpenArena
+          deathmatch to select the most deadly ninja.
+
+
 
   .row.hackathon-social
     %section.row-content

@@ -26,13 +26,18 @@
 
       %article.row-content-double
         %h2.row-title= @team.name
- 
+    
         .team-facebook-like
+          %p 
+            This page is an opengraph object (see meta tags!). 
+            %br/
+            Only its direct likes counts for the Social metrics!
+          
           :plain
             <div class="fb-like" data-width="50" data-height="10" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="true" data-send="false"></div>
 
         .team-twitter-hashtag
-          twitter hashtag:
+          %p Twitter hashtag. They must be used in association!
           %h4.row-important
             = "#" + @team.hashtag 
             \#48rails

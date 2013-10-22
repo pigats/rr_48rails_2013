@@ -151,13 +151,13 @@
       %article.row-content-single
         %h3.row-important Metrics
       %article.row-content-double
-        %p Juries are faulty! We only let beautiful math to assign prizes at 48rails. We have 3 team metrics and 2 solo metrics. Prizes will be granted to:
+        %p Juries are faulty! We only let beautiful math assign prizes at 48rails. We have 4 team metrics and 2 solo metrics. Prizes will be granted to:
         %ul
           %li the team with the highest overall score (1st Prize)
           %li the first ranked teams in each team metric
           %li the first ranked solo in each solo metric
 
-    %section.row-content
+    %section.row-content.hackathon-metrics
       %article.row-content-single
         %h3.row-important Code
         %p We are giving prizes to the best teams based on the quality of their work&hellip;
@@ -169,7 +169,7 @@
         %h4.row-important Teamwork
         %p Teams are small (1 to 4 people), so every member needs to earn its place. More, time is wasted whenever more than one work on the same single piece of the software. We expect an equal work distribution, and a clear separation of responsibilities.
       
-    %section.row-content
+    %section.row-content.hackathon-metrics
       %article.row-content-single
         %h3.row-important Social
         %p &hellip; on how much influent they are on the social networks&hellip;
@@ -184,7 +184,7 @@
           - @teams.each do |team|
             %li= link_to team.name, team_path(team)
 
-    %section.row-content
+    %section.row-content.hackathon-metrics
       %article.row-content-single
         %h3.row-important Solo
         %p &hellip; and to the most distinguished solos.

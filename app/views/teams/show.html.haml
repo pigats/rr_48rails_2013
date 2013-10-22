@@ -27,6 +27,11 @@
       %article.row-content-double
         %h2.row-title= @team.name
     
+        .team-url
+          Launch the webapp: 
+          = link_to @team.url, @team.url, target: '_blank'
+
+    
         .team-facebook-like
           %p 
             This page is an opengraph object (see meta tags!). 

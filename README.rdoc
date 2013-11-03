@@ -1,3 +1,5 @@
 == README
 
 rails ninjas silently and invisibly kicking your ass
+
+see it live on http://2013.48rails.it
